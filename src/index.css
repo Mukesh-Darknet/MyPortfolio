@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00f0ff;
+  --color-neon-purple: #8a2be2;
+  --color-dark-bg: #0a0a0a;
+
+  --color-orange-light: #F4B27A;
+  --color-orange-medium: #F97316;
+  --color-orange-deep: #EA580C;
+  --color-orange-dark: #C2410C;
+
+  --font-sans: "Orbitron", system-ui, sans-serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-dark-bg);
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    cursor: none;
+    /* For custom cursor */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-dark-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange-medium);
+  }
+
+  ::selection {
+    background-color: rgba(249, 115, 22, 0.3);
+    color: #fff;
+  }
+
+  @keyframes shooting-star {
+    0% {
+      transform: translateX(200px) translateY(-200px) rotate(-45deg);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateX(-1500px) translateY(1500px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-shooting-star {
+    animation: shooting-star linear infinite;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    cursor: none;
+    /* Replaced by custom cursor */
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, var(--color-orange-medium), var(--color-orange-deep));
+  }
+
+  .glow-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glow-hover:hover {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+    border-color: rgba(249, 115, 22, 0.5);
+  }
+}
