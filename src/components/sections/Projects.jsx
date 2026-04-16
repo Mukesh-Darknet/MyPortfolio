@@ -48,8 +48,8 @@ const ProjectCard = ({ index, ...project }) => {
     return (
         <motion.div
             variants={fadeIn('up', 'spring', index * 0.3, 0.75)}
-            className="w-full preserve-3d group"
-            style={{ perspective: '1000px' }}
+            className="w-[340px] md:w-[380px] flex-shrink-0 snap-center preserve-3d group"
+            style={{ perspective: '1000px', height: '100%' }}
         >
             <motion.div
                 whileHover={{ scale: 1.02, rotateY: 5, rotateX: 5 }}
@@ -58,7 +58,7 @@ const ProjectCard = ({ index, ...project }) => {
             >
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-medium/5 to-orange-deep/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <div className="relative w-full h-[230px] rounded-2xl overflow-hidden z-10 border border-white/10">
+                <div className="relative w-full h-[200px] rounded-2xl overflow-hidden z-10 border border-white/10">
                     <img
                         src={project.image}
                         alt={project.name}
@@ -105,7 +105,7 @@ const ProjectCard = ({ index, ...project }) => {
 
 const Projects = () => {
     return (
-        <section id="projects" className="w-full min-h-screen mx-auto relative overflow-hidden py-24 sm:py-32">
+        <section id="projects" className="w-full mx-auto relative overflow-hidden py-12 sm:py-16">
             {/* Background gradient blob */}
             <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-orange-medium/10 rounded-full blur-[120px] -z-10" />
 
@@ -131,7 +131,7 @@ const Projects = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.1 }}
-                    className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="mt-20 flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-hide px-4 md:px-0"
                 >
                     {projects.map((project, index) => (
                         <ProjectCard key={project.name} index={index} {...project} />

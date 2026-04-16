@@ -1,9 +1,7 @@
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 
 const DottedBackground = () => {
-    const [dots, setDots] = useState([]);
-
-    useEffect(() => {
+    const [dots] = useState(() => {
         const colors = [
             'text-orange-medium',
             'text-orange-deep',
@@ -14,7 +12,7 @@ const DottedBackground = () => {
         ];
 
         // Generate 50 random glowing dots
-        const newDots = Array.from({ length: 50 }).map((_, i) => ({
+        return Array.from({ length: 50 }).map((_, i) => ({
             id: i,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -23,9 +21,7 @@ const DottedBackground = () => {
             animationDelay: `${Math.random() * 5}s`,
             colorClass: colors[Math.floor(Math.random() * colors.length)]
         }));
-
-        setDots(newDots);
-    }, []);
+    });
 
     return (
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

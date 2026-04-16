@@ -5,76 +5,84 @@ import { GraduationCap, BookOpen, Building } from 'lucide-react';
 
 const About = () => {
     return (
-        <section id="about" className="w-full min-h-screen mx-auto relative overflow-hidden py-24 sm:py-32">
+        <section id="about" className="w-full mx-auto relative overflow-hidden py-12 sm:py-16">
             <div className="max-w-7xl mx-auto px-6 z-10 relative">
                 <motion.div variants={textVariant()} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
-                    <p className="sm:text-[18px] text-[14px] text-gray-400 uppercase tracking-wider font-mono">Introduction</p>
+                    {/* <p className="sm:text-[18px] text-[14px] text-gray-400 uppercase tracking-wider font-mono">Introduction</p> */}
                     <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] drop-shadow-md">OVERVIEW</h2>
                 </motion.div>
 
-                <div className="mt-20 flex flex-col md:flex-row gap-16 items-center justify-between">
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-8 items-start justify-between mt-12 w-full">
+                    {/* LEFT CONTENT */}
                     <motion.div
                         variants={fadeIn('right', 'spring', 0.2, 1)}
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.25 }}
-                        className="md:w-1/2 w-full text-gray-300 text-[17px] leading-[30px]"
+                        className="lg:w-1/2 w-full flex flex-col gap-8"
                     >
-                        <p className="mb-6">
-                            I am a <span className="text-orange-medium font-semibold">MERN Stack Developer</span> with experience in building
-                            modern, scalable, and real-time web applications. I specialize in the React ecosystem, Node.js backends,
-                            and leveraging AI integrations.
-                        </p>
-                        <p className="mb-6">
-                            As a fresher, I focus on writing clean code and creating smooth user experiences. I enjoy building projects like markdown editors, real-time chat applications, and other useful tools. My background in C++ and Data Structures helps me understand problem-solving and build efficient applications while keeping the design simple and user-friendly (<span className="text-orange-deep font-semibold">C++, DSA</span>) and a sharp eye for aesthetic design.
-                        </p>
-                        <div className="flex flex-wrap gap-4 mt-8">
-                            <div className="glass px-6 py-4 rounded-2xl border-l-[3px] border-l-orange-medium border-[1px] border-white/5 glow-hover min-w-[140px]">
-                                <h3 className="text-white font-bold text-[32px]">1</h3>
-                                <p className="text-gray-400 text-[12px] uppercase tracking-widest mt-1 font-mono">Years Exp.</p>
+                        <div className="text-gray-300 text-[17px] leading-[30px]">
+                            <p className="mb-6">
+                                I am a <span className="text-orange-medium font-semibold">MERN Stack Developer</span> with experience in building
+                                modern, scalable, and real-time web applications. I specialize in the React ecosystem, Node.js backends,
+                                and leveraging AI integrations.
+                            </p>
+                            <p className="mb-6">
+                                As a fresher, I focus on writing clean code and creating smooth user experiences. I enjoy building projects like markdown editors, real-time chat applications, and other useful tools. My background in C++ and Data Structures helps me understand problem-solving and build efficient applications while keeping the design simple and user-friendly (<span className="text-orange-deep font-semibold">C++, DSA</span>) and a sharp eye for aesthetic design.
+                            </p>
+                            <div className="flex flex-wrap gap-4 mt-8">
+                                <div className="glass px-6 py-4 rounded-2xl border-l-[3px] border-l-orange-medium border-[1px] border-white/5 glow-hover min-w-[140px]">
+                                    <h3 className="text-white font-bold text-[32px]">New</h3>
+                                    <p className="text-gray-400 text-[12px] uppercase tracking-widest mt-1 font-mono">Fresher</p>
+                                </div>
+                                <div className="glass px-6 py-4 rounded-2xl border-l-[3px] border-l-orange-medium border-[1px] border-white/5 glow-hover min-w-[140px]">
+                                    <h3 className="text-white font-bold text-[32px]">3+</h3>
+                                    <p className="text-gray-400 text-[12px] uppercase tracking-widest mt-1 font-mono">Projects</p>
+                                </div>
                             </div>
-                            <div className="glass px-6 py-4 rounded-2xl border-l-[3px] border-l-orange-medium border-[1px] border-white/5 glow-hover min-w-[140px]">
-                                <h3 className="text-white font-bold text-[32px]">3+</h3>
-                                <p className="text-gray-400 text-[12px] uppercase tracking-widest mt-1 font-mono">Projects</p>
-                            </div>
+
+                            {/* Download Resume Button */}
+                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="pt-8 inline-block">
+                                <a
+                                    href="/resume.pdf"
+                                    download="Mukesh_Resume.pdf"
+                                    className="px-8 py-4 bg-orange-medium text-white font-bold tracking-widest uppercase rounded-xl shadow-[0_4px_20px_rgba(249,115,22,0.3)] hover:shadow-[0_4px_25px_rgba(249,115,22,0.5)] hover:bg-orange-deep transition-all duration-300 flex items-center gap-3 w-fit"
+                                >
+                                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                    </svg>
+                                    Download Resume
+                                </a>
+                            </motion.div>
                         </div>
                     </motion.div>
 
+                    {/* RIGHT CONTENT - STAGGERED GRID */}
                     <motion.div
                         variants={fadeIn('left', 'spring', 0.4, 1)}
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.25 }}
-                        className="md:w-1/2 w-full flex justify-center"
+                        className="lg:w-1/2 w-full grid grid-cols-2 gap-4 auto-rows-min"
                     >
-                        {/* 3D tilt-like effect using framer motion */}
-                        <motion.div
-                            whileHover={{ scale: 1.05, rotateY: 8, rotateX: 5 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            className="w-full max-w-[380px] glass p-2 rounded-[32px] relative preserve-3d group shadow-2xl"
-                            style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
-                        >
-                            <div className="absolute inset-0 bg-gradient-to-br from-orange-medium/20 to-orange-deep/20 rounded-[32px] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div
-                                className="w-full h-[400px] bg-[#0d0d0d] rounded-[28px] overflow-hidden flex flex-col items-center justify-center relative z-10 p-6 border border-white/5"
-                                style={{ transform: 'translateZ(30px)' }}
-                            >
-                                {/* Cyberpunk grid background pattern */}
-                                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]" />
+                        {/* Top Left - Wide */}
+                        <div className="col-span-2 row-span-1 glass rounded-[20px] overflow-hidden group cursor-pointer border border-white/5 h-[200px] sm:h-[260px] relative">
+                            <div className="absolute inset-0 bg-orange-medium/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2672&auto=format&fit=crop" alt="project" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
 
-                                <div className="w-[140px] h-[140px] rounded-full bg-gradient-to-tr from-orange-medium to-orange-deep p-1 relative z-20 shadow-[0_0_30px_rgba(249,115,22,0.3)] group-hover:shadow-[0_0_40px_rgba(249,115,22,0.5)] transition-shadow duration-500">
-                                    <div className="w-full h-full bg-[#0a0a0a] rounded-full flex justify-center items-center">
-                                        <span className="text-[60px] font-black text-transparent bg-clip-text bg-gradient-to-br from-orange-light to-white drop-shadow-md">MY</span>
-                                    </div>
-                                </div>
+                        {/* Middle Left - Square */}
+                        <div className="col-span-1 row-span-1 glass rounded-[20px] overflow-hidden group cursor-pointer border border-white/5 h-[160px] sm:h-[220px] relative">
+                            <div className="absolute inset-0 bg-orange-medium/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2670&auto=format&fit=crop" alt="project" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
 
-                                <h3 className="text-white text-2xl font-bold mt-8 relative z-20">Mukesh Yadav</h3>
-                                <p className="text-gray-400 font-mono text-sm mt-2 relative z-20">Fullstack Engineer</p>
 
-                                <div className="absolute top-6 left-6 w-2 h-2 rounded-full bg-orange-medium shadow-[0_0_10px_rgba(249,115,22,1)] animate-pulse" />
-                                <div className="absolute bottom-6 right-6 w-2 h-2 rounded-full bg-orange-deep shadow-[0_0_10px_rgba(234,88,12,1)] animate-ping" style={{ animationDuration: '3s' }} />
-                            </div>
-                        </motion.div>
+                        {/* Bottom Left - Square (Staggered up) */}
+                        <div className="col-span-1 row-span-1 glass rounded-[20px] overflow-hidden group cursor-pointer border border-white/5 h-[160px] sm:h-[220px] relative mt-[-16px]">
+                            <div className="absolute inset-0 bg-orange-medium/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2670&auto=format&fit=crop" alt="project" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
                     </motion.div>
                 </div>
 
@@ -82,7 +90,7 @@ const About = () => {
                 <div className="mt-32 w-full relative z-10">
                     <motion.div variants={textVariant()} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }} className="mb-16 flex flex-col items-center">
                         <h3 className="text-white text-3xl font-bold font-mono uppercase tracking-widest text-center relative inline-block">
-                            Education 
+                            Education
                             <span className="w-1/2 h-[2px] bg-gradient-to-r from-transparent via-orange-medium to-transparent absolute -bottom-3 left-1/4 rounded-full" />
                         </h3>
                     </motion.div>

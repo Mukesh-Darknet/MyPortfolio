@@ -25,13 +25,13 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="w-full min-h-screen mx-auto relative overflow-hidden py-24 sm:py-32">
+        <section id="contact" className="w-full mx-auto relative overflow-hidden py-12 sm:py-16">
             {/* Background gradient blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-deep/5 rounded-full blur-[150px] -z-10 pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 z-10 relative">
                 <motion.div variants={textVariant()} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }} className="text">
-                    
+
                     <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] drop-shadow-md">CONTACT</h2>
                 </motion.div>
 
